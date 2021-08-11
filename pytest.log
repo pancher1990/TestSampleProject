@@ -1,0 +1,6 @@
+2021-08-11 22:13:30 [    INFO] TEST: Try to login with eve.holt@reqres.in, cityslicka  (api.py:23)
+2021-08-11 22:13:30 [    INFO] TEST: Try to create user : request POST with data {'name': 'morpheus', 'job': 'leader'}  (api.py:32)
+2021-08-11 22:13:31 [    INFO] TEST: Try to login with eve.holt@reqres.in, cityslicka  (api.py:23)
+2021-08-11 22:13:31 [    INFO] TEST: Try to get user: request GET  with id 2  (api.py:41)
+2021-08-11 22:13:31 [    INFO] TEST: Try to login with eve.holt@reqres.in, cityslicka  (api.py:23)
+2021-08-11 22:13:31 [    INFO] TEST: Try to update user: request PUT  with id {'name': 'morpheus', 'job': 'zion resident'}  (api.py:50)
