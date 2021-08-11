@@ -14,6 +14,7 @@ class TestIssue:
         assert expected_status_code == response_create_user.status_code
         response_json = response_create_user.json()
 
+        assert {"name", "job"}.issubset(response_json.keys())
         user_name = response_json["name"]
         user_job = response_json["job"]
         assert (user_job == job) and (user_name == name)
@@ -25,6 +26,10 @@ class TestIssue:
         assert expected_status_code == response_get_user.status_code
 
         response_json = response_get_user.json()
+
+        assert "data" in response_json.keys()
+        assert {"first_name", "last_name", "email"}.issubset(response_json["data"].keys())
+
         user_first_name = response_json["data"]["first_name"]
         user_last_name = response_json["data"]["last_name"]
         user_email = response_json["data"]["email"]
@@ -39,7 +44,9 @@ class TestIssue:
         response_update_user = Api.update_user(user_id, "morpheus", "zion resident")
         assert 200 == response_update_user.status_code
 
-        response_json=response_update_user.json()
+        response_json = response_update_user.json()
+
+        assert {"name", "job"}.issubset(response_json.keys())
         user_name = response_json["name"]
         user_job = response_json["job"]
 

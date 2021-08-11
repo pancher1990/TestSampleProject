@@ -1,4 +1,6 @@
 import requests
+
+
 class HttpManager:
     @staticmethod
     def auth(url, email, password):
