@@ -26,14 +26,16 @@ class Api:
         url = Api.BASE_URL + "api/users"
         body_request = JSONFixture.for_create_user(name, job)
         result = HttpManager.post(url, body_request)
-        Api.LOGGER.info('TEST: Try to create user : request {0} with data {1} '.format("POST", body_request))
+        Api.LOGGER.info('TEST: Try to create user : request {0} with data {1} '
+                        .format("POST", body_request))
         return result
 
     @staticmethod
     def get_user(id):
         url = Api.BASE_URL + "api/users/{0}".format(id)
         result = HttpManager.get(url)
-        Api.LOGGER.info('TEST: Try to get user: request {0}  with id {1} '.format("GET", id))
+        Api.LOGGER.info('TEST: Try to get user: request {0}  with id {1} '
+                        .format("GET", id))
         return result
 
     @staticmethod
@@ -41,5 +43,6 @@ class Api:
         url = Api.BASE_URL + "api/users/{0}".format(id)
         body_request = JSONFixture.for_update_user(name, job)
         result = HttpManager.put(url, body_request)
-        Api.LOGGER.info('TEST: Try to update user: request {0}  with id {1} '.format("PUT", body_request))
+        Api.LOGGER.info('TEST: Try to update user: request {0}  with id {1} '
+                        .format("PUT", body_request))
         return result
